@@ -1,9 +1,9 @@
 package com.cs56fitnessapp.models;
 
 /**
- * @author Ksenia Koldaeva
- * Created: 10/1/17
- * Last Updated: 10/1/17
+ * @author Saori Shigehisa
+ * Created: 10/13/17
+ * Last Updated: 10/13/17
  */
 
 public class TotalCarb {
