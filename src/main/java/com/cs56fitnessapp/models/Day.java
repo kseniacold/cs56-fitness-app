@@ -58,7 +58,7 @@ public class Day implements ActivityFacts, DietFacts {
     }
 
     @Override
-    public int getActiveTime() {
+    public int getActiveTimeMins() {
         return 0;
     }
 
