@@ -7,7 +7,7 @@ package com.cs56fitnessapp.models;
  */
 public class User {
 
-    private User  user;
+    private user User;
     private String  name;
     private String  username;
     private Date  dateOfBirth;
@@ -19,4 +19,17 @@ public class User {
     private Goal goal;
     private double goalWeight;
     private ActivityLevel activityLevel;
+
+    public double  getBMI(){
+
+        return 0;
+    }
+
+    public double getbodyFatPercentage(){
+
+
+        return 0;
+    }
+
 }
+
