@@ -41,10 +41,9 @@ public class Day implements ActivityFacts, DietFacts {
         return now.getYear() == date.getYear() && now.getMonth() == date.getMonth() && now.getDayOfMonth() == date.getDayOfMonth();
     }
 
-    // TODO:
-    // Kcal ~= METS * bodyMassKg * timePerformingHours
+
     public double getCaloriesLeft() {
-        return 0;
+        return this.user.getDailyCalorieGoal() - this.getCaloriesIn() + this.getCaloriesOut();
     }
 
     /* ActivityFacts Interface */
@@ -59,9 +58,13 @@ public class Day implements ActivityFacts, DietFacts {
     }
 
     @Override
-    public int getActiveTimeMins()
-    {
-        return 0;
+    public int getActiveTimeMins() {
+        int sum = 0;
+        for (int i = 0; i < workoutList.size(); ++i) {
+            Workout workout = workoutList.get(i);
+            sum += workout.getActiveTimeMins();
+        }
+        return sum;
     }
 
     /* DietFacts Interface */
@@ -76,25 +79,23 @@ public class Day implements ActivityFacts, DietFacts {
     }
 
     @Override
-    public TotalFat getTotalFatIn() {
+    public double getTotalFatIn() {
         double sum = 0.0;
         for (int i = 0; i < mealList.size(); ++i) {
             Meal meal = mealList.get(i);
-            TotalFat totalfat = meal.getTotalFatIn();
-            sum += totalfat.getTotalFat();
+            sum += meal.getTotalFatIn();
         }
-        return new TotalFat(sum);
+        return sum;
     }
 
     @Override
-    public TotalCarb getTotalCarbIn() {
+    public double getTotalCarbIn() {
         double sum = 0.0;
         for (int i = 0; i < mealList.size(); ++i) {
             Meal meal = mealList.get(i);
-            TotalCarb totalcarb = meal.getTotalCarbIn();
-            sum += totalcarb.getTotalCarb();
+            sum += meal.getTotalCarbIn();
         }
-        return new TotalCarb(sum);
+        return sum;
     }
 
     @Override
