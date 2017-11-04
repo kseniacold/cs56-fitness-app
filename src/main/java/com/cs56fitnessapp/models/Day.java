@@ -3,7 +3,7 @@ package com.cs56fitnessapp.models;
 /**
  * @author Saori Shigehisa
  * Created: 10/6/17
- * Last Updated: 10/14/17
+ * Last Updated: 11/03/17
  */
 import com.cs56fitnessapp.models.workout.Workout;
 
@@ -32,8 +32,27 @@ public class Day implements ActivityFacts, DietFacts {
     public Day (LocalDate date, User user){
       this.date = date;
       this.user = user;
+      this.workoutList = new ArrayList <Workout>();
+      this.mealList = new ArrayList <Meal>();
     }
 
+    public boolean addWorkout(Workout workout){
+      this.workoutList.add(workout);
+      return true;
+    }
+
+    public ArrayList < Workout > getWorkoutList(){
+        return this.workoutList;
+    }
+
+    public boolean addMeal(Meal meal){
+      this.mealList.add(meal);
+      return true;
+    }
+
+    public ArrayList < Meal > getMealList(){
+        return this.mealList;
+    }
 
     public boolean isToday() {
         LocalDate now = LocalDate.now();
