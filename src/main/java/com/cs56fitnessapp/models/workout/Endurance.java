@@ -1,23 +1,31 @@
 package com.cs56fitnessapp.models.workout;
 
+import com.cs56fitnessapp.models.FitnessFormulas;
 import com.cs56fitnessapp.models.User;
 import java.time.LocalDate;
 
 /**
  * @author Ksenia Koldaeva
  * Created: 10/10/17
- * Last Updated: 10/11/17
+ * Last Updated: 10/18/17
  */
 
 public abstract class Endurance extends Workout {
 
     private double distanceKm;
-    private double timePerformingHours;
 
+    /**
+     *
+     * Constructs Endurance object with provided parameters
+     * @param user user performing endurance workout
+     * @param date date of the workout
+     * @param distanceKm distance of the endurance workout
+     * @param timePerformingHours time of the endurance workout
+     */
     public Endurance(User user, LocalDate date, double distanceKm, double timePerformingHours) {
         super(user, date);
         this.distanceKm = distanceKm;
-        this.timePerformingHours = timePerformingHours;
+        super.setTimePerformingHours(timePerformingHours);
     }
 
     // Start getters and setters
@@ -28,14 +36,6 @@ public abstract class Endurance extends Workout {
 
     public void setDistanceKm(double distanceKm) {
         this.distanceKm = distanceKm;
-    }
-
-    public double getTimePerformingHours() {
-        return timePerformingHours;
-    }
-
-    public void setTimePerformingHours(double timePerformingHours) {
-        this.timePerformingHours = timePerformingHours;
     }
 
     // End getters and setters
