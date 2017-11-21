@@ -20,9 +20,6 @@ public class Day implements ActivityFacts, DietFacts {
     /** User */
     private User user;
 
-    /** calorieGoal */
-    private double calorieGoal;
-
     /** WorkoutList */
     private ArrayList < Workout > workoutList;
 
