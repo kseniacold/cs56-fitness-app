@@ -36,18 +36,16 @@ public class Day implements ActivityFacts, DietFacts {
       this.mealList = new ArrayList <Meal>();
     }
 
-    public boolean addWorkout(Workout workout){
-      this.workoutList.add(workout);
-      return true;
+    public boolean addWorkout(Workout workout) {
+        return this.workoutList.add(workout);
     }
 
     public ArrayList < Workout > getWorkoutList(){
         return this.workoutList;
     }
 
-    public boolean addMeal(Meal meal){
-      this.mealList.add(meal);
-      return true;
+    public boolean addWorkout(Meal meal) {
+        return this.mealList.add(meal);
     }
 
     public ArrayList < Meal > getMealList(){
